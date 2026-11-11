@@ -1,36 +1,3 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Drive Attachment</title>
-  <link rel="stylesheet" href="popup.css">
-</head>
-<body>
-
-  <h2>Gmail Large Attachment</h2>
-
-  <p>
-    Select files larger than 2 MB.
-    They will be uploaded to your Google Drive.
-  </p>
-
-  <input type="file" id="files" multiple>
-
-  <p>
-    Files of 2 MB or smaller must be attached
-    using Gmail's paperclip button.
-  </p>
-
-  <button id="upload" disabled>
-    Upload and Insert Drive Links
-  </button>
-
-  <div id="status"></div>
-
-  <ul id="results"></ul>
-
-  <script src="popup.js"></script>
-
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Smart Attachments</title><style>
+body{font:14px Arial,sans-serif;width:340px;padding:16px;color:#192b3b}h1{font-size:19px}p{line-height:1.5}button{padding:9px;margin:4px 0}#status,#config{overflow-wrap:anywhere;white-space:pre-wrap}#config{font-size:12px}a{color:#165ea0}
+</style></head><body><h1>Gmail Smart Attachments</h1><p>Files over 2 MiB upload to Drive. Smaller files attach normally using Gmail’s paperclip.</p><p><strong>Large files become viewable by anyone with the link.</strong> Each selection asks before uploading and sharing.</p><button id="connect">Connect Google Drive</button> <button id="reconnect">Reconnect</button><p id="status" role="status" aria-live="polite"></p><p id="config"></p><p><a href="https://console.cloud.google.com/auth/clients" target="_blank" rel="noopener noreferrer">Google Cloud OAuth clients</a></p><script src="popup.js"></script></body></html>

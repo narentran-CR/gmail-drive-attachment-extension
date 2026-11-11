@@ -1,19 +1,17 @@
-
 {
   "manifest_version": 3,
-  "name": "Gmail Large Attachment to Drive",
-  "version": "1.0.0",
-  "description": "Uploads files larger than 2 MB to Google Drive and inserts viewer links into Gmail.",
+  "name": "Gmail Smart Attachments to Drive",
+  "version": "1.1.0",
+  "description": "Keep Gmail attachments up to 2 MB; upload larger selections to Drive and insert a link.",
   "permissions": [
     "identity",
-    "activeTab"
+    "storage"
   ],
   "host_permissions": [
-    "https://www.googleapis.com/*",
-    "https://mail.google.com/*"
+    "https://www.googleapis.com/*"
   ],
   "oauth2": {
-    "client_id": "YOUR_OAUTH_CLIENT_ID",
+    "client_id": "747522444002-oe4k2nkt0goai1086uai2av3co05v1ff.apps.googleusercontent.com",
     "scopes": [
       "https://www.googleapis.com/auth/drive.file"
     ]
@@ -21,17 +19,22 @@
   "background": {
     "service_worker": "background.js"
   },
-  "action": {
-    "default_title": "Add large files to Drive",
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
     {
       "matches": [
         "https://mail.google.com/*"
       ],
-      "js": ["content.js"],
-      "run_at": "document_idle"
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
     }
-  ]
+  ],
+  "action": {
+    "default_title": "Smart Gmail attachments",
+    "default_popup": "popup.html"
+  },
+  "minimum_chrome_version": "105",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+Oe3GRHPX/eyU6ynBogcFVmnbOUvIYhEZErhzsAJW+EWLmso95fkogQNMLppfkeHymL9og9FPfW/6SuFQLYSE3gdD8K7IeYkk/XzLogIlgxCDWgNHXu80Vpo1yQhyU7zZuK0ZRcPNGSCBcWzZwmlm9KwpNGC1voM8wtmUICEZNsy5gpeGTjhbWh5UdB7yJGsXpKMaXkq9kZWEv/AhRFjDdqxYwu1adq/Vc7S4WZQiB2+lMlrnioAGiNqdGgQqEIAdtWBb8RDivLsXdLNfvkX5jDk3vbI3IQ+CVSSd2Wxv15qC84cX62rg291etALden1lxtQ52YWfRIepl+P5wpyRwIDAQAB"
 }
