@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Drive Attachment</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <h2>Gmail Large Attachment</h2>
+
+  <p>
+    Select files larger than 2 MB.
+    They will be uploaded to your Google Drive.
+  </p>
+
+  <input type="file" id="files" multiple>
+
+  <p>
+    Files of 2 MB or smaller must be attached
+    using Gmail's paperclip button.
+  </p>
+
+  <button id="upload" disabled>
+    Upload and Insert Drive Links
+  </button>
+
+  <div id="status"></div>
+
+  <ul id="results"></ul>
+
+  <script src="popup.js"></script>
+
+</body>
+</html>
